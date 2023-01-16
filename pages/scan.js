@@ -1,18 +1,22 @@
-import React, { useState, useRef } from "react";
-
-import styles from "../styles/Home.module.css";
+import React, { useState } from "react";
+import { useZxing } from "react-zxing";
 
 function Scan() {
-  const [data, setData] = useState("No result");
+ const [result, setResult] = useState("");
+  const { ref } = useZxing({
+    onResult(result) {
+      setResult(result.getText());
+    },
+  });
 
   return (
-    <div className={styles.container}>
-      <div className={styles.container}>
-
-        <p>{data}</p>
-
-      </div>
-    </div>
+    <>
+      <video ref={ref} />
+      <p>
+        <span>Last result:</span>
+        <span>{result}</span>
+      </p>
+    </>
   );
 }
 

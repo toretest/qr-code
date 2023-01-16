@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "install-peerdeps": "^3.0.3",
     "next": "13.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-qr-code": "^2.0.11",
-    "react-qr-reader": "^3.0.0-beta-1"
+    "react-qr-reader": "3.0.0-beta-1"
   }
 }
